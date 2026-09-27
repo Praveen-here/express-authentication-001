@@ -1,0 +1,21 @@
+# Instructions for the Repo Forge platform (not shown to the user).
+id: express-authentication-001
+title: Fix the Login Bug
+framework: express
+difficulty: easy
+tags: [authentication, bcrypt, async-await, jwt]
+
+run:
+  workdir: /app/backend        # folder inside the container where commands run
+  start: npm run dev           # starts the app with auto-reload
+  port: 3000                   # the preview connects to this port
+
+editable:                      # only these folders are saved in the user's volume
+  - backend/src
+  - frontend
+
+test:
+  sample: npm test             # what the user can run from the terminal
+  hidden_dir: backend/.grader  # grader copies the hidden tests here (grading container only)
+  command: npx jest --ci --roots=.grader --json --outputFile=/tmp/report.json
+  timeout: 60                  # seconds

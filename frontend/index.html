@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SecureNotes – Login</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="card">
+    <h1>SecureNotes</h1>
+
+    <section id="auth-view">
+      <div class="tabs">
+        <button class="tab active" data-tab="login">Login</button>
+        <button class="tab" data-tab="register">Register</button>
+      </div>
+
+      <form id="login-form" class="form">
+        <label>Email <input type="email" name="email" placeholder="demo@test.com" required /></label>
+        <label>Password <input type="password" name="password" placeholder="••••••••" required /></label>
+        <button type="submit">Login</button>
+      </form>
+
+      <form id="register-form" class="form hidden">
+        <label>Name <input type="text" name="name" required /></label>
+        <label>Email <input type="email" name="email" required /></label>
+        <label>Password <input type="password" name="password" minlength="6" required /></label>
+        <button type="submit">Create account</button>
+      </form>
+    </section>
+
+    <section id="profile-view" class="hidden">
+      <h2>Welcome, <span id="profile-name"></span>!</h2>
+      <p class="muted">Signed in as <span id="profile-email"></span></p>
+      <button id="logout-btn" class="secondary">Logout</button>
+    </section>
+
+    <p id="message" class="message"></p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
